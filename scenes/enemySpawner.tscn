@@ -11,3 +11,7 @@ script = ExtResource( 1 )
 
 [node name="Timer2" type="Timer" parent="."]
 
+[node name="Timer3" type="Timer" parent="."]
+
+[node name="Timer4" type="Timer" parent="."]
+
