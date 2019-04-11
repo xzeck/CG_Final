@@ -8,9 +8,9 @@ const path_enemy_green = preload("res://scenes/enemy_slow_green.tscn")
 func _ready():
  
  # Set timer
- $Timer.wait_time = rand_range(1, 40)
- $Timer2.wait_time = rand_range(1,30)
- $Timer3.wait_time = rand_range(1,20)
+ $Timer.wait_time = rand_range(1, 25)
+ $Timer2.wait_time = rand_range(1,20)
+ $Timer3.wait_time = rand_range(1,15)
  $Timer4.wait_time = rand_range(1,10)
  $Timer.connect("timeout", self, "spawn_red")
  $Timer2.connect("timeout", self, "spawn_yellow")
