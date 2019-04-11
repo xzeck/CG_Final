@@ -1,9 +1,13 @@
 #Ship Script
 
 extends Area2D
+const scn_laser = preload("res://scenes/laser_ship.tscn")
+var Health = 100 setget Player_Health
 
 func _ready():
 	set_process(true)
+	set_process_input(true)
+	add_to_group("ship")
 	pass
 
 func _process(delta):
@@ -15,5 +19,32 @@ func _process(delta):
 	var pos = self.get_position()
 	pos.x = clamp(pos.x, 0+40,(viewsize.x - 40))
 	self.set_position(pos)
+	
+	
+		
 	pass
 
+func _input(event):
+	if event is InputEventKey and event.get_scancode() == KEY_SPACE:
+		if !event.is_pressed():
+			shoot()
+	pass
+
+func shoot():
+	var CannonPos = get_node("cannon/cannon_position").get_global_position()
+	create_laser(CannonPos)
+	
+	pass
+
+func Player_Health(new_value):
+	Health = new_value
+	if Health <= 0 : queue_free()
+	pass
+
+
+func create_laser(pos):
+	var laser = scn_laser.instance()
+	laser.set_position(pos)
+	get_tree().get_root().add_child(laser)
+	pass
+	

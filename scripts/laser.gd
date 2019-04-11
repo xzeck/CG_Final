@@ -9,7 +9,7 @@ func _ready():
 	set_process(true)
 	create_flare()
 	
-	yield(get_node("vis_notifier"),"exit_screen")
+	yield(get_node("vis_notifier"),"screen_exited")
 	queue_free()
 	pass
 	
