@@ -1,13 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=1]
-[ext_resource path="res://sprites/balloons/ajay_balloon_yellow.png" type="Texture" id=2]
+[ext_resource path="res://scripts/enemy_fast_yellow.gd" type="Script" id=2]
+[ext_resource path="res://sprites/balloons/ajay_balloon_yellow.png" type="Texture" id=3]
 
 [node name="enemy_fast_yellow" instance=ExtResource( 1 )]
-velocity = Vector2( 0, 325 )
+script = ExtResource( 2 )
+velocity = Vector2( 0, 350 )
 
 [node name="sprite" parent="." index="0"]
 scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 offset = Vector2( 0, 80 )
 

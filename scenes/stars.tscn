@@ -23,6 +23,14 @@ centered = false
 script = ExtResource( 2 )
 velocity = Vector2( 0, 50 )
 
+[node name="star_far3" type="Sprite" parent="stars far"]
+position = Vector2( 0, 600 )
+scale = Vector2( 3.32898, 3.32898 )
+texture = ExtResource( 1 )
+centered = false
+script = ExtResource( 2 )
+velocity = Vector2( 0, 50 )
+
 [node name="stars close" type="Node2D" parent="."]
 z_index = 10
 
@@ -32,14 +40,14 @@ scale = Vector2( 3.32898, 3.32898 )
 texture = ExtResource( 3 )
 centered = false
 script = ExtResource( 2 )
-velocity = Vector2( 0, 100 )
+velocity = Vector2( 0, 150 )
 
 [node name="star_close2" type="Sprite" parent="stars close"]
 scale = Vector2( 3.32898, 3.32898 )
 texture = ExtResource( 3 )
 centered = false
 script = ExtResource( 2 )
-velocity = Vector2( 0, 100 )
+velocity = Vector2( 0, 150 )
 
 [node name="star_close3" type="Sprite" parent="stars close"]
 position = Vector2( 0, 600 )
@@ -47,5 +55,11 @@ scale = Vector2( 3.32898, 3.32898 )
 texture = ExtResource( 3 )
 centered = false
 script = ExtResource( 2 )
-velocity = Vector2( 0, 100 )
+velocity = Vector2( 0, 150 )
+
+[node name="Space Ships" type="Node2D" parent="."]
+position = Vector2( 475.135, -92.5043 )
+__meta__ = {
+"_edit_group_": true
+}
 

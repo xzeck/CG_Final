@@ -2,7 +2,7 @@
 
 extends Area2D
 const scn_laser = preload("res://scenes/laser_ship.tscn")
-var Health = 100 setget Player_Health
+var Health_Ship = 100 setget Player_Health
 
 func _ready():
 	set_process(true)
@@ -37,8 +37,8 @@ func shoot():
 	pass
 
 func Player_Health(new_value):
-	Health = new_value
-	if Health <= 0 : queue_free()
+	Health_Ship = new_value
+	if Health_Ship <= 0 : queue_free()
 	pass
 
 
