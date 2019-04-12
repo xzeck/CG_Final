@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 LaserSound="*res://scenes/LaserSound.tscn"
+themePlayer="*res://scenes/themePlayer.tscn"
 
 [display]
 
