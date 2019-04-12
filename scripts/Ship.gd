@@ -19,9 +19,6 @@ func _process(delta):
 	var pos = self.get_position()
 	pos.x = clamp(pos.x, 0+40,(viewsize.x - 40))
 	self.set_position(pos)
-	
-	
-		
 	pass
 
 func _input(event):
@@ -33,7 +30,7 @@ func _input(event):
 func shoot():
 	var CannonPos = get_node("cannon/cannon_position").get_global_position()
 	create_laser(CannonPos)
-	
+	LaserSound.play("LaserShoot")
 	pass
 
 func Player_Health(new_value):

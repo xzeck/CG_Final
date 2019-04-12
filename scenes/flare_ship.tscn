@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/flare.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/PNG/Lasers/laserRed08.png" type="Texture" id=2]
+[ext_resource path="res://scripts/flare_ship.gd" type="Script" id=3]
+
+[node name="flare" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+script = ExtResource( 3 )
+
