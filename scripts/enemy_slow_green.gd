@@ -6,7 +6,7 @@ func _ready():
 
 func _on_area_entered(other):
 	if other.is_in_group("ship"):
-		other.Health_Ship -=10
+		other.Health_Ship -=1
 		create_flare()
 		queue_free()
 	pass

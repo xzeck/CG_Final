@@ -2,8 +2,11 @@
 
 extends Area2D
 const scn_laser = preload("res://scenes/laser_ship.tscn")
-var Health_Ship = 100 setget Player_Health
+const scn_explo = preload("res://scenes/Explosion.tscn")
+signal health_changed
 
+var Health_Ship = 4 setget Player_Health
+var pos
 func _ready():
 	set_process(true)
 	set_process_input(true)
@@ -16,7 +19,7 @@ func _process(delta):
 	
 	var viewsize = get_viewport_rect().size
 	print(viewsize)
-	var pos = self.get_position()
+	pos = self.get_position()
 	pos.x = clamp(pos.x, 0+40,(viewsize.x - 40))
 	self.set_position(pos)
 	pass
@@ -35,7 +38,12 @@ func shoot():
 
 func Player_Health(new_value):
 	Health_Ship = new_value
-	if Health_Ship <= 0 : queue_free()
+	emit_signal("health_changed", Health_Ship)
+	if Health_Ship <= 0 : 
+		var explo_instance = scn_explo.instance()
+		explo_instance.set_position(pos)
+		get_tree().get_root().add_child(explo_instance)
+		queue_free()
 	pass
 
 
