@@ -18,7 +18,7 @@ func _process(delta):
 	translate(Vector2(motion, 0))
 	
 	var viewsize = get_viewport_rect().size
-	print(viewsize)
+	# print(viewsize)
 	pos = self.get_position()
 	pos.x = clamp(pos.x, 0+40,(viewsize.x - 40))
 	self.set_position(pos)

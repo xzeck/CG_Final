@@ -21,6 +21,8 @@ func Balloon_Health(new_value):
 	if Health <= 0 : 
 		LaserSound.play("BalloonPop")
 		queue_free()
+		print(get_tree().get_root().get_child(get_child_count()).get_node("HUD").get_child(get_child_count()-1).setScore(5))
+		
 	pass
 
 func create_flare():
